@@ -1,7 +1,7 @@
 /*
-    /usr/local/mysql/bin/mysql -u root -p a6255568
+    This code show how to use C++ MySQL
+    /usr/local/mysql/bin/mysql -u root -p psw
     g++ -I /usr/local/mysql/include -L /usr/local/mysql/lib -l mysqlclient mysql.cpp -o mysql.out
-
 */
 
 #include <iostream>
@@ -18,7 +18,7 @@ int main()
     string query;
 
     mysql_init(&mysql);
-    if (mysql_real_connect(&mysql, "localhost", "root", "a6255568", "Distributed_Database", 3306, NULL, 0))
+    if (mysql_real_connect(&mysql, "localhost", "root", "pwd", "Distributed_Database", 3306, NULL, 0))
     {
         query = "SELECT m_value FROM Key_Value_Table;";
         mysql_query(&mysql, query.c_str());
